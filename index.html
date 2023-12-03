@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scramble word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Scramble word</h1>
+        <div class="content">
+            <p class="word" id="scrambledWord">Put some letters</p>
+            <input type="text" placeholder="Enter a valid word" id="userInput" onkeydown="handleKeyPress(event)">
+            <button class="check-word" onclick="checkWord()">Enter</button>   
+        </div>
+    </div>
+
+    <script>
+        var wordDictionary = {
+        "vaajcsrpti": "javascript",
+        "nohtyp": "python",
+        "gnimmargorp": "programming",
+        "calr": "carl"
+    };
+
+    function checkWord() {
+        var userInput = document.getElementById("userInput").value.toLowerCase();
+        var scrambledWord = document.getElementById("scrambledWord").innerHTML.toLowerCase();
+
+        if (userInput === wordDictionary[scrambledWord]) {
+            alert("Congratulations! the word is correct!");
+        } else {
+            alert("Sorry, try again!");
+        }
+
+        var scrambledWords = Object.keys(wordDictionary);
+        var randomIndex = Math.floor(Math.random() * scrambledWords.length);
+        var randomScrambledWord = scrambledWords[randomIndex];
+ 
+        document.getElementById("scrambledWord").innerHTML = randomScrambledWord;    
+    }
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            checkWord();
+        }
+    }
+         
+    </script>
+    
+</body>
+</html>

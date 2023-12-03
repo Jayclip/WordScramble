@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fec89a; 
+}
+.container{
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    border-color:  black;
+}
+.container h1{
+    font-size: 30px;
+    font-weight: 500;
+    padding: 50px 60px;
+}
+.container .content{
+    margin: 25px 20px 40px;
+}
+.content .word{
+    font-size: 33px;
+    font-weight: 900;
+    text-align: center;
+    margin: 25px 40px 70px;
+}
+input{
+    margin-left: 20px;
+}
